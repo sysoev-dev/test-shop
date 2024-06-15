@@ -1,0 +1,60 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "type": "cloth",
+      "name": "Футболка",
+      "price": 1000,
+      "size": ["S", "M", "L"],
+      "color": ["черный", "белый"],
+      "discount": 10,
+      "onSale": true,
+      "installment": true
+    },
+    {
+      "id": 2,
+      "type": "electronics",
+      "name": "Наушники",
+      "price": 5000,
+      "power": "10 Вт",
+      "color": ["черный", "синий"],
+      "installment": true
+    },
+    {
+      "id": 3,
+      "type": "furniture",
+      "name": "Стул",
+      "price": 2500,
+      "size": "средний",
+      "color": ["коричневый"],
+      "discount": 20,
+      "onSale": true
+    },
+    {
+      "id": 4,
+      "type": "food",
+      "name": "Молоко",
+      "price": 100,
+      "expirationDate": "2024-03-15",
+      "productionDate": "2023-03-15"
+    },
+    {
+      "id": 5,
+      "type": "cloth",
+      "name": "Штаны",
+      "price": 2000,
+      "size": ["S", "M", "L"],
+      "color": ["синий"]
+    },
+    {
+      "id": 6,
+      "type": "electronics",
+      "name": "Клавиатура",
+      "price": 18990,
+      "power": "1 Вт",
+      "color": ["черный", "синий"],
+      "discount": 30,
+      "onSale": true
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+.catalog__item {
+  position: relative;
+}
+
+.catalog__item-sale {
+  position: absolute;
+  display: block;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5c52;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+}
