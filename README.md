@@ -1,6 +1,5 @@
 # Тестовое задание - Страница товаров с карточками
-
-## React, TypeScript, Redux, RTK query, Ant design, json-server
+Используемые технологии: React, TypeScript, Redux, RTK query, Ant design, json-server
 
 [Ссылка на деплой](https://sysoev-dev.ru/projects/shop/)
 
