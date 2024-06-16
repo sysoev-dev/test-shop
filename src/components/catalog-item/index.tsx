@@ -1,6 +1,6 @@
 import { Product } from '../../shared/types/types';
 import { calcDicountPrice, calcInstallment } from '../../utils/calc';
-import { Card, Typography, Space } from 'antd';
+import { Card, Typography } from 'antd';
 import { PRODUCTS_TYPES } from '../../shared/consts/products-type';
 import './style.css';
 
@@ -8,10 +8,11 @@ interface CatalogItemProps {
   product: Product;
 }
 
-const { Text, Title } = Typography;
+const { Title } = Typography;
 
 function CatalogItem({ product }: CatalogItemProps) {
   const {
+    id,
     name,
     price,
     installment,
@@ -30,67 +31,82 @@ function CatalogItem({ product }: CatalogItemProps) {
 
   const productInfo =
     type === PRODUCTS_TYPES.CLOTH.type ? (
-      <div>
-        <Text>Размер: {size?.join(', ')}</Text>
-        <Text>Цвет: {color?.join(', ')}</Text>
-      </div>
+      <>
+        <div className='card__data-list-row'>
+          <dt>Размер:</dt>
+          <dd>{size?.join(', ')}</dd>
+        </div>
+        <div className='card__data-list-row'>
+          <dt>Цвет:</dt>
+          <dd>{color?.join(', ')}</dd>
+        </div>
+      </>
     ) : type === PRODUCTS_TYPES.ELECTRONICS.type ? (
-      <div>
-        <Text>Мощность: {power}</Text>
-        <Text>Цвет: {color?.join(', ')}</Text>
-      </div>
+      <>
+        <div className='card__data-list-row'>
+          <dt>Мощность:</dt>
+          <dd>{power}</dd>
+        </div>
+        <div className='card__data-list-row'>
+          <dt>Цвет:</dt>
+          <dd>{color?.join(', ')}</dd>
+        </div>
+      </>
     ) : type === PRODUCTS_TYPES.FURNITURE.type ? (
-      <div>
-        <Text>Размер: {size}</Text>
-        <Text>Цвет: {color?.join(', ')}</Text>
-      </div>
+      <>
+        <div className='card__data-list-row'>
+          <dt>Размер:</dt>
+          <dd>{size}</dd>
+        </div>
+        <div className='card__data-list-row'>
+          <dt>Цвет:</dt>
+          <dd>{color?.join(', ')}</dd>
+        </div>
+      </>
     ) : type === PRODUCTS_TYPES.FOOD.type ? (
-      <div>
-        <Text>Срок годности: {expirationDate}</Text>
-        <Text>Дата производства: {productionDate}</Text>
-      </div>
+      <>
+        <div className='card__data-list-row'>
+          <dt>Дата производства:</dt>
+          <dd>{productionDate}</dd>
+        </div>
+        <div className='card__data-list-row'>
+          <dt>Срок годности:</dt>
+          <dd>{expirationDate}</dd>
+        </div>
+      </>
     ) : null;
 
   return (
     <Card
-      className='catalog__item'
-      hoverable
-      style={{ width: 350 }}
       cover={
         <img
-          alt='example'
+          alt='example image'
           src='https://www.amityinternational.com/wp-content/uploads/2019/02/product-placeholder.jpg'
         />
       }
+      hoverable
+      className='catalog__item card'
     >
-      {onSale && <span className='catalog__item-sale'>Акция</span>}
-      <Title level={3}>{name}</Title>
-
-      {discount ? (
-        <>
-          <Text>Цена: </Text>
-          <Text
-            style={{ color: '#ff5c52', fontSize: '16px', marginRight: '5px' }}
-          >
-            {discountPrice} ₽
-          </Text>
-          <Text
-            style={{
-              textDecoration: 'line-through',
-              color: '#888888',
-              verticalAlign: 'super',
-            }}
-          >
-            {price}
-          </Text>
-        </>
-      ) : (
-        <Text>Цена: {price} ₽</Text>
-      )}
-      <Space direction='vertical'>
-        {installment && <Text>Рассрочка: {installmentPrice} ₽/мес</Text>}
-        {productInfo}
-      </Space>
+      {onSale && <div className='catalog__item-sale'>Акция!</div>}
+      <div className='card__container'>
+        <p className='card__code'>Артикул: {id}</p>
+        <Title level={2}>{name}</Title>
+        <div className='card__price-wrapper'>
+          {discount ? (
+            <p className='card__price'>
+              Цена:{' '}
+              <span className='card__price--discount'>{discountPrice}₽</span>
+              <span className='card__price--old'>{price}</span>
+            </p>
+          ) : (
+            <p className='card__price'>Цена: {price}₽</p>
+          )}
+          {installment && <p>Рассрочка: {installmentPrice} ₽/мес</p>}
+        </div>
+        <div className='card__data-wrapper'>
+          <dl className='card__data-list'>{productInfo}</dl>
+        </div>
+      </div>
     </Card>
   );
 }

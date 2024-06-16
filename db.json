@@ -35,16 +35,16 @@
       "type": "food",
       "name": "Молоко",
       "price": 100,
-      "expirationDate": "2024-03-15",
-      "productionDate": "2023-03-15"
+      "productionDate": "14-06-2024",
+      "expirationDate": "17-06-2024"
     },
     {
       "id": 5,
       "type": "cloth",
       "name": "Штаны",
       "price": 2000,
-      "size": ["S", "M", "L"],
-      "color": ["синий"]
+      "size": ["L"],
+      "color": ["зеленый"]
     },
     {
       "id": 6,
@@ -55,6 +55,41 @@
       "color": ["черный", "синий"],
       "discount": 30,
       "onSale": true
+    },
+    {
+      "id": 7,
+      "type": "food",
+      "name": "Яблоки",
+      "price": 250,
+      "productionDate": "14-06-2024",
+      "expirationDate": "27-06-2024"
+    },
+    {
+      "id": 8,
+      "type": "cloth",
+      "name": "Куртка",
+      "price": 7000,
+      "installment": true,
+      "size": ["L", "XL", "XXL"],
+      "color": ["черный"]
+    },
+    {
+      "id": 9,
+      "type": "electronics",
+      "name": "Монитор",
+      "price": 24000,
+      "power": "10 Вт",
+      "color": ["черный", "синий"],
+      "discount": 5,
+      "onSale": true
+    },
+    {
+      "id": 10,
+      "type": "electronics",
+      "name": "Принтер",
+      "price": 4000,
+      "power": "5 Вт",
+      "color": ["черный"]
     }
   ]
 }

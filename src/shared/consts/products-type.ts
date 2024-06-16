@@ -16,6 +16,3 @@ export const PRODUCTS_TYPES = {
     text: 'продукты питания',
   },
 } as const;
-
-// export type PathNames = (typeof PRODUCTS_TYPES)[keyof typeof PRODUCTS_TYPES];
-// 'одежда' | 'электроника' | 'мебель' | 'продукты питания';

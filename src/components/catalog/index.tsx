@@ -14,11 +14,14 @@ function Catalog() {
   }
 
   return (
-    <div className='catalog'>
-      {products.map((item) => (
-        <CatalogItem key={item.id} product={item} />
-      ))}
-    </div>
+    <>
+      <h1>Каталог товаров</h1>
+      <div className='catalog'>
+        {products.map((item) => (
+          <CatalogItem key={item.id} product={item} />
+        ))}
+      </div>
+    </>
   );
 }
 

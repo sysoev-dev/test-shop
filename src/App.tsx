@@ -1,6 +1,5 @@
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-// import ProductList from './components/catalog-card';
 import Catalog from './components/catalog';
 import './App.css';
 

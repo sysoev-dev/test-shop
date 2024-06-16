@@ -1,5 +1,5 @@
 export function calcDicountPrice(price: number, discount: number) {
-  return (price - (price * discount) / 100).toFixed(2);
+  return (price - (price * discount) / 100).toFixed(0);
 }
 
 export function calcInstallment(price: number) {
